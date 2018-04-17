@@ -152,14 +152,25 @@ START_TEST(test_2d_area_triangle)
     coord_2d_t c;
     coord_2d_t exp;
 
-	a.x = 15;
-	a.y = 15;
-	b.x = 23;
-	b.y = 30;
-	c.x = 50;
-	c.y = 25;
+	a.x = 1;
+	a.y = 1;
+	b.x = 1;
+	b.y = 1;
+	c.x = 1;
+	c.y = 1;
 	coord_2d_area_triangle(&a, &b, &c);
-	ck_assert(coord_2d_area_triangle(&a, &b, &c)==222.50);
+	ck_assert(coord_2d_area_triangle(&a, &b, &c)==0);
+
+
+	a.x = 1;
+	a.y = 1;
+	b.x = 10;
+	b.y = 1;
+	c.x = 20;
+	c.y = 1;
+	coord_2d_area_triangle(&a, &b, &c);
+	ck_assert(coord_2d_area_triangle(&a, &b, &c)==0);
+
 }
 END_TEST
 
